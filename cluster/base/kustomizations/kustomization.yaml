@@ -6,3 +6,5 @@ resources:
   - resources.yaml
   - tekton.yaml
   - crds.yaml
+  - resources-mappings.yaml
+  - resources-tls.yaml
