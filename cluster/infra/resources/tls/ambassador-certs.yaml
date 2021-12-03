@@ -3,9 +3,6 @@ apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
   name: ambassador-certs
-  # cert-manager will put the resulting Secret in the same Kubernetes
-  # namespace as the Certificate. You should create the certificate in
-  # whichever namespace you want to configure a Host.
   namespace: ambassador
 spec:
   secretName: ambassador-certs
@@ -13,5 +10,4 @@ spec:
     name: letsencrypt-prod
     kind: ClusterIssuer
   dnsNames:
-    # Replace this with the FQDN value
-    - <my_fqdn_replace_me>
+    - stiforr.com
