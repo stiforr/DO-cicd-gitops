@@ -1,0 +1,28 @@
+---
+apiVersion: getambassador.io/v2
+kind: Host
+metadata:
+  name: wildstar
+  namespace: ambassador
+spec:
+  hostname: "*"
+  selector:
+    matchLabels:
+      hostname: wildcard
+  acmeProvider:
+    authority: none
+#  tlsSecret:
+#    name: ambassador-certs
+  requestPolicy:
+    insecure:
+      action: Route
+---
+apiVersion: getambassador.io/v2
+kind: Mapping
+metadata:
+  name: argocd-server
+  namespace: argocd
+spec:
+  prefix: /argo-cd
+  rewrite: /argo-cd
+  service: argocd-server:443

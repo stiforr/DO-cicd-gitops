@@ -1,0 +1,76 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: argo-cd
+  namespace: flux-system
+spec:
+  chart:
+    spec:
+      chart: argo-cd
+      sourceRef:
+        kind: HelmRepository
+        name: argo
+        namespace: flux-system
+      version: 3.26.11
+  install:
+    createNamespace: true
+  interval: 24h0m0s
+  releaseName: argocd
+  targetNamespace: argocd
+  values:
+    controller:
+      resources:
+        requests:
+          cpu: 250m
+          memory: 256Mi
+    dex:
+      resources:
+      requests:
+        cpu: 10m
+        memory: 32Mi
+    redis:
+      resources:
+        requests:
+          cpu: 100m
+          memory: 64Mi
+    server:
+      autoscaling:
+        enabled: true
+      resources:
+        requests:
+          cpu: 50m
+          memory: 64Mi
+      ingress:
+        enabled: false
+        annotations: { }
+        labels: { }
+        ingressClassName: ""
+        hosts:
+          [ ]
+        paths:
+          - /
+        tls:
+          [ ]
+        # - secretName: argocd-tls-certificate
+        #   hosts:
+        #     - argocd.example.com
+      ingressGrpc:
+        enabled: false
+        isAWSALB: false
+        annotations: { }
+        labels: { }
+        ingressClassName: ""
+        awsALB:
+          serviceType: NodePort
+          backendProtocolVersion: HTTP2
+        hosts:
+          [ ]
+        paths:
+          - /
+        tls:
+          [ ]
+          # - secretName: argocd-tls-certificate
+          #   hosts:
+          #     - argocd.example.com
+    configs: { }

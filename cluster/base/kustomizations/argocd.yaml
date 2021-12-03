@@ -1,0 +1,39 @@
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
+kind: Kustomization
+metadata:
+  name: argo-cd
+  namespace: flux-system
+spec:
+  interval: 24h0m0s
+  path: ./cluster/infra/argo
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+    namespace: flux-system
+  patches:
+    - patch: |-
+        apiVersion: apps/v1
+        kind: Deployment
+        metadata:
+          labels:
+            app.kubernetes.io/component: server
+            app.kubernetes.io/name: argocd-server
+            app.kubernetes.io/part-of: argocd
+          name: argocd-server
+        spec:
+          template:
+            spec:
+              containers:
+                - command:
+                  - argocd-server
+                  - --staticassets
+                  - /shared/app
+                  - --insecure
+                  - --rootpath
+                  - /argo-cd
+      target:
+        kind: Deployment
+        labelSelector: "app.kubernetes.io/name=argocd-server"
+        namespace: argocd
