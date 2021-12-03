@@ -8,3 +8,4 @@ resources:
   - resources-mappings.yaml
   - resources-tls.yaml
   - sops-secrets.yaml
+  - cert-manager.yaml
