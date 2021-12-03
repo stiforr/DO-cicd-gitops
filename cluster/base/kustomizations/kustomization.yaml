@@ -7,3 +7,4 @@ resources:
   - crds.yaml
   - resources-mappings.yaml
   - resources-tls.yaml
+  - sops-secrets.yaml

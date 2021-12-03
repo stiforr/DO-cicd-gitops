@@ -1,0 +1,30 @@
+name: Renovate - Update helm releases
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 */4 * * *"
+
+jobs:
+  update-helm-release-annotations:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Renovate Helm Releases
+        uses: k8s-at-home/renovate-helm-releases@v1.4.5
+        with:
+          cluster-path: "./cluster"
+      - uses: peter-evans/create-pull-request@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: renovate-annotations
+          delete-branch: true
+          title: "chore(deps): update renovate annotations"
+          signoff: true
+          committer: "Sean Norwood <insuusvenerati@users.noreply.github.com>"
+          author: "Sean Norwood <insuusvenerati@users.noreply.github.com>"
+          assignees: "insuusvenerati"
+          commit-message: "chore(deps): update renovate annotations"
+          body: |
+            Update Helm Releases in order for Renovate to pick up new versions of Helm charts
+          labels: renovate/annotations
