@@ -11,8 +11,8 @@ spec:
       hostname: wildcard
   acmeProvider:
     authority: none
-#  tlsSecret:
-#    name: ambassador-certs
+  tlsSecret:
+    name: ambassador-certs
   requestPolicy:
     insecure:
       action: Route
