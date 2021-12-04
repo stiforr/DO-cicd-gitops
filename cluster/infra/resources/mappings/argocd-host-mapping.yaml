@@ -5,7 +5,7 @@ metadata:
   name: wildstar
   namespace: ambassador
 spec:
-  hostname: "*"
+  hostname: "stiforr.com"
   selector:
     matchLabels:
       hostname: wildcard
@@ -15,7 +15,8 @@ spec:
     name: ambassador-certs
   requestPolicy:
     insecure:
-      action: Route
+      action: Redirect
+      additionalPort: 8080
 ---
 apiVersion: getambassador.io/v2
 kind: Mapping
