@@ -41,36 +41,8 @@ spec:
         requests:
           cpu: 50m
           memory: 64Mi
-      ingress:
-        enabled: false
-        annotations: { }
-        labels: { }
-        ingressClassName: ""
-        hosts:
-          [ ]
-        paths:
-          - /
-        tls:
-          [ ]
-        # - secretName: argocd-tls-certificate
-        #   hosts:
-        #     - argocd.example.com
-      ingressGrpc:
-        enabled: false
-        isAWSALB: false
-        annotations: { }
-        labels: { }
-        ingressClassName: ""
-        awsALB:
-          serviceType: NodePort
-          backendProtocolVersion: HTTP2
-        hosts:
-          [ ]
-        paths:
-          - /
-        tls:
-          [ ]
-          # - secretName: argocd-tls-certificate
-          #   hosts:
-          #     - argocd.example.com
+      extraArgs:
+        - -- insecure
+        - --rootpath
+        - /argo-cd
     configs: { }
