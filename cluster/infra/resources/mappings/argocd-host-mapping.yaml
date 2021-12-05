@@ -28,14 +28,14 @@ spec:
   prefix: /argo-cd
   rewrite: /argo-cd
   service: argocd-server:443
-#---
-#apiVersion: getambassador.io/v1
-#kind:  Mapping
-#metadata:
-#  name:  argocd-api
-#  namespace: argocd
-#spec:
-#  grpc: true
-#  prefix: /argo-cd
-#  rewrite: /argo-cd
-#  service: argocd-server-grpc
+---
+apiVersion: getambassador.io/v1
+kind:  Mapping
+metadata:
+  name:  argocd-api
+  namespace: argocd
+spec:
+  grpc: true
+  prefix: /argo-cd
+  rewrite: /argo-cd
+  service: argocd-server-grpc
