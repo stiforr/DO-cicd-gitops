@@ -39,8 +39,8 @@ spec:
         enabled: true
       resources:
         requests:
-          cpu: 50m
-          memory: 64Mi
+          cpu: 500m
+          memory: 256Mi
       extraArgs:
         - --insecure
         - --rootpath
