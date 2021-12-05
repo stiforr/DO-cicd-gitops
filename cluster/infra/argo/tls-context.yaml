@@ -1,0 +1,18 @@
+---
+apiVersion: getambassador.io/v1
+kind: TLSContext
+metadata:
+  name: grpc-server
+  namespace: ambassador
+spec:
+  hosts: ["api.argocd.site"]
+  secret: ambassador-certs
+  alpn_protocols: h2
+---
+apiVersion: getambassador.io/v1
+kind: TLSContext
+metadata:
+  name: grpc-client
+  namespace: ambassador
+spec:
+  alpn_protocols: h2
