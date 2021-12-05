@@ -42,7 +42,7 @@ spec:
           cpu: 50m
           memory: 64Mi
       extraArgs:
-        - -- insecure
+        - --insecure
         - --rootpath
         - /argo-cd
     configs: { }

@@ -1,0 +1,12 @@
+kind: Application
+apiVersion: argoproj.io/v1alpha1
+metadata:
+  name: remix-jokes-pipeline
+spec:
+  project: default
+  source:
+    repoURL: 'https://github.com/stiforr/DO-cicd-gitops'
+    path: .
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: tekton-argocd-example
