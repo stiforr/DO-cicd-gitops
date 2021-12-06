@@ -20,8 +20,8 @@ spec:
   values:
     podDisruptionBudget:
       enabled: true
-        maxUnavailable: 1
-        minAvailable: 0
+      maxUnavailable: 1
+      minAvailable: 0
     ingressClass:
       enabled: true
       isDefaultClass: true
