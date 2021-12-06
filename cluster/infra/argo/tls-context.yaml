@@ -3,9 +3,9 @@ apiVersion: getambassador.io/v1
 kind: TLSContext
 metadata:
   name: grpc-server
-  namespace: ambassador
+  namespace: argo-cd
 spec:
-  hosts: ["api.argocd.site"]
+  hosts: ["stiforr.com"]
   secret: ambassador-certs
   alpn_protocols: h2
 ---
@@ -13,6 +13,6 @@ apiVersion: getambassador.io/v1
 kind: TLSContext
 metadata:
   name: grpc-client
-  namespace: ambassador
+  namespace: argo-cd
 spec:
   alpn_protocols: h2
