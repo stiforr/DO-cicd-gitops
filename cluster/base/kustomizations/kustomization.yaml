@@ -2,10 +2,10 @@ kind: Kustomization
 apiVersion: kustomize.config.k8s.io/v1beta1
 resources:
   - argocd.yaml
-  - ambassador.yaml
+#  - ambassador.yaml
   - tekton.yaml
   - crds.yaml
-  - resources-mappings.yaml
+#  - resources-mappings.yaml
   - resources-tls.yaml
   - sops-secrets.yaml
   - cert-manager.yaml
