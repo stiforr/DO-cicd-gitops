@@ -6,7 +6,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 24h0m0s
-  path: ./cluster/infra/resources/mappings
+  path: ./cluster/infra/resources/ingress
   prune: true
   sourceRef:
     kind: GitRepository
