@@ -3,4 +3,4 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 resources:
   - argo-cd.yaml
   - argocd-grpc-service.yaml
-  - tls-context.yaml
+#  - tls-context.yaml

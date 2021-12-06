@@ -36,7 +36,6 @@ metadata:
   namespace: argocd
 spec:
   grpc: true
-  prefix: /argo-cd
-  rewrite: /argo-cd
-  service: argocd-server-grpc:443
-  tls: grpc-client
+  prefix: /argo-api
+  rewrite: /argo-api
+  service: argocd-server-grpc
