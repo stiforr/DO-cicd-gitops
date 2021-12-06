@@ -25,3 +25,7 @@ spec:
       enabled: false
       servicemonitor:
         enabled: false
+    ingressShim:
+      defaultIssuerName: "letsencrypt-prod"
+      defaultIssuerKind: "ClusterIssuer"
+      defaultIssuerGroup: "cert-manager.io"

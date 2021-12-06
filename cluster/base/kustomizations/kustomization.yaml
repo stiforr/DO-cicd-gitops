@@ -4,8 +4,9 @@ resources:
   - argocd.yaml
 #  - ambassador.yaml
   - tekton.yaml
-  - crds.yaml
+#  - crds.yaml
 #  - resources-mappings.yaml
   - resources-tls.yaml
   - sops-secrets.yaml
   - cert-manager.yaml
+  - traefik.yaml
