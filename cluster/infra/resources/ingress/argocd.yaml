@@ -2,14 +2,14 @@ apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
 metadata:
   name: argocd-server
-  namespace: argocd
+  namespace: traefik
 spec:
   entryPoints:
     - web
     - websecure
   routes:
     - kind: Rule
-      match: Host(`stiforr.com`) && PathPrefix(`/argocd`)
+      match: Host(`stiforr.com`) && PathPrefix(`/argo-cd`)
       priority: 10
       services:
         - name: argocd-server
@@ -22,6 +22,4 @@ spec:
           port: 80
           scheme: h2c
   tls:
-    certResolver: default
-    options:
-      name: default
+    secretName: stiforr-com-tls

@@ -25,13 +25,12 @@ spec:
   values:
     logs:
       general:
-        level: INFO
+        level: ERROR
     ingressRoute:
       dashboard:
         enabled: true
         # Additional ingressRoute annotations (e.g. for kubernetes.io/ingress.class)
-        annotations:
-          kuberentes.io/ingress.class: traefik
+        annotations: { }
         # Additional ingressRoute labels (e.g. for filtering IngressRoute by custom labels)
         labels: { }
     podDisruptionBudget:
@@ -53,17 +52,16 @@ spec:
           [ ]
         publishedService:
           enabled: false
-#    ports:
+    ports:
 #      web:
 #        redirectTo: websecure
       websecure:
         tls:
           enabled: true
           options: "default"
-          domains: []
+          domains: [ ]
     globalArguments:
       - "--providers.kubernetesingress.ingressclass=traefik"
     additionalArguments:
       - "--api=true"
       - "--api.dashboard=true"
-      - "--api.insecure=true"

@@ -2,10 +2,10 @@
 apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
-  name: ambassador-certs
-  namespace: ambassador
+  name: stiforr-com-tls
+  namespace: traefik
 spec:
-  secretName: ambassador-certs
+  secretName: stiforr-com-tls
   issuerRef:
     name: letsencrypt-prod
     kind: ClusterIssuer
