@@ -23,6 +23,9 @@ spec:
   interval: 24h0m0s
   targetNamespace: traefik
   values:
+    logs:
+      general:
+        level: INFO
     ingressRoute:
       dashboard:
         enabled: true
