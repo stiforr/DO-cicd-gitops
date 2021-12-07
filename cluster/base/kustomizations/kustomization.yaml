@@ -9,4 +9,4 @@ resources:
   - resources-tls.yaml
   - sops-secrets.yaml
   - cert-manager.yaml
-#  - traefik.yaml
+  - traefik.yaml
