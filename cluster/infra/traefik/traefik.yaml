@@ -15,6 +15,11 @@ spec:
       version: 10.6.2
   install:
     createNamespace: true
+    remediation:
+      retries: 10
+  upgrade:
+    remediation:
+      retries: 10
   interval: 24h0m0s
   targetNamespace: traefik
   values:
