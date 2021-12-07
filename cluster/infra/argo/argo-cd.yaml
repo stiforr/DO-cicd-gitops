@@ -36,7 +36,7 @@ spec:
           memory: 64Mi
     server:
       ingress:
-        enabled: true
+        enabled: false
         annotations:
           certmanager.k8s.io/cluster-issuer: letsencrypt-prod
         hosts:
