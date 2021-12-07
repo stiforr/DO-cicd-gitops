@@ -62,7 +62,8 @@ spec:
           options: "default"
           domains: []
     globalArguments:
+      - "--providers.kubernetesingress.ingressclass=traefik"
+    additionalArguments:
       - "--api=true"
       - "--api.dashboard=true"
       - "--api.insecure=true"
-      - "--providers.kubernetesingress.ingressclass=traefik"
