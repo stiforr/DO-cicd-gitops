@@ -29,8 +29,14 @@ spec:
       kubernetesCRD:
         enabled: true
         allowCrossNamespace: true
+        namespaces:
+          [ ]
       kubernetesIngress:
         enabled: true
+        namespaces:
+          [ ]
+        publishedService:
+          enabled: false
     ports:
       web:
         redirectTo: websecure
@@ -38,7 +44,6 @@ spec:
         tls:
           enabled: true
           options: "default"
-          domains:
-            - main: stiforr.com
+          domains: []
     globalArguments:
       - "--providers.kubernetesingress.ingressclass=traefik"
