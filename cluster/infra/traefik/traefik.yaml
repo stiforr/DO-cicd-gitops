@@ -40,4 +40,5 @@ spec:
           options: "default"
           domains:
             - main: stiforr.com
-    globalArguments: []
+    globalArguments:
+      - "--providers.kubernetesingress.ingressclass=traefik"
