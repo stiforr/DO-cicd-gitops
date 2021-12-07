@@ -5,7 +5,7 @@ resources:
 #  - ambassador.yaml
   - tekton.yaml
 #  - crds.yaml
-  - resources-ingress.yaml
+#  - resources-ingress.yaml
   - resources-tls.yaml
   - sops-secrets.yaml
   - cert-manager.yaml
