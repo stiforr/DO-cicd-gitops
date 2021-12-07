@@ -1,0 +1,17 @@
+kind: IngressRoute
+apiVersion: traefik.containo.us/v1alpha1
+metadata:
+  name: tekton-argocd-example-build-el-mapping
+  namespace: traefik
+spec:
+  entryPoints:
+    - web
+    - websecure
+  routes:
+    - kind: Rule
+      match: PathPrefix(`/tekton-argocd-example-build-mapping`)
+      services:
+        - name: el-tekton-argocd-example-build-el
+          port: 8080
+  tls:
+    secretName: stiforr-com-tls

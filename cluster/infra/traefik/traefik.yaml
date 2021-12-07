@@ -53,8 +53,8 @@ spec:
         publishedService:
           enabled: false
     ports:
-#      web:
-#        redirectTo: websecure
+      web:
+        redirectTo: websecure
       websecure:
         tls:
           enabled: true
