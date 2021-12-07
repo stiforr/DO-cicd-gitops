@@ -18,6 +18,13 @@ spec:
   interval: 24h0m0s
   targetNamespace: traefik
   values:
+    ingressRoute:
+      dashboard:
+        enabled: true
+        # Additional ingressRoute annotations (e.g. for kubernetes.io/ingress.class)
+        annotations: { }
+        # Additional ingressRoute labels (e.g. for filtering IngressRoute by custom labels)
+        labels: { }
     podDisruptionBudget:
       enabled: true
       maxUnavailable: 1
@@ -46,4 +53,5 @@ spec:
           options: "default"
           domains: []
     globalArguments:
+      - "--api.insecure=true"
       - "--providers.kubernetesingress.ingressclass=traefik"
