@@ -13,12 +13,14 @@ spec:
       priority: 10
       services:
         - name: argocd-server
+          namespace: argocd
           port: 80
     - kind: Rule
       match: Host(`stiforr.com`) && PathPrefix(`/argo-cd`) && Headers(`Content-Type`, `application/grpc`)
       priority: 11
       services:
         - name: argocd-server
+          namespace: argocd
           port: 80
           scheme: h2c
   tls:
