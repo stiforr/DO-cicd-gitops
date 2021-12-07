@@ -22,7 +22,8 @@ spec:
       dashboard:
         enabled: true
         # Additional ingressRoute annotations (e.g. for kubernetes.io/ingress.class)
-        annotations: { }
+        annotations:
+          kuberentes.io/ingress.class: traefik
         # Additional ingressRoute labels (e.g. for filtering IngressRoute by custom labels)
         labels: { }
     podDisruptionBudget:
@@ -53,5 +54,6 @@ spec:
           options: "default"
           domains: []
     globalArguments:
-      - "--api.insecure=true"
+      - "--api=true"
+#      - "--api.insecure=true"
       - "--providers.kubernetesingress.ingressclass=traefik"
