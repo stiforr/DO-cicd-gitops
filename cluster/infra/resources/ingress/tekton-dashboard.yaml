@@ -15,4 +15,4 @@ spec:
       services:
         - name: tekton-dashboard
           port: 9097
-          namespace: tekton-dashboard
+          namespace: tekton-pipelines
