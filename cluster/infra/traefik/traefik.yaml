@@ -24,6 +24,10 @@ spec:
   interval: 24h0m0s
   targetNamespace: traefik
   values:
+    pilot:
+      enabled: true
+      token: "b15e4f99-e996-4729-b35b-94fc304c35c5"
+      dashboard: true
     logs:
       general:
         level: ERROR
