@@ -11,3 +11,4 @@ resources:
   - cert-manager.yaml
   - traefik.yaml
   - tekton-dashboard.yaml
+  - resources-middleware.yaml
