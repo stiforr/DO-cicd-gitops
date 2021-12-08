@@ -1,0 +1,18 @@
+kind: IngressRoute
+apiVersion: traefik.containo.us/v1alpha1
+metadata:
+  name: tekton-dashboard
+  namespace: traefik
+spec:
+  entryPoints:
+    - web
+    - websecure
+  tls:
+    secretName: stiforr-com-tls
+  routes:
+    - kind: Rule
+      match: PathPrefix("/ci")
+      services:
+        - name: tekton-dashboard
+          port: 9097
+          namespace: tekton-dashboard

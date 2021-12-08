@@ -3,3 +3,4 @@ kind: Kustomization
 resources:
   - argocd.yaml
   - tekton-argocd-example-build-mapping.yaml
+  - tekton-dashboard.yaml
