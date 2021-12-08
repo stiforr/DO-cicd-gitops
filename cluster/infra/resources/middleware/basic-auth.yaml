@@ -6,3 +6,4 @@ metadata:
 spec:
   basicAuth:
     secret: auth
+    removeHeader: true
