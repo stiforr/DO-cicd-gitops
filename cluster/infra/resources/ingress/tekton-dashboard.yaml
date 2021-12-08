@@ -12,6 +12,8 @@ spec:
   routes:
     - kind: Rule
       match: Host(`ci.stiforr.com`)
+      middlewares:
+        - name: basic-auth
       services:
         - name: tekton-dashboard
           port: 9097
