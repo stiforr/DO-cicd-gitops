@@ -11,7 +11,7 @@ spec:
     secretName: stiforr-com-tls
   routes:
     - kind: Rule
-      match: PathPrefix("/ci")
+      match: Host(`ci.stiforr.com`)
       services:
         - name: tekton-dashboard
           port: 9097
