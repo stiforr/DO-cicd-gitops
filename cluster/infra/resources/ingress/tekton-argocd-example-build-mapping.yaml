@@ -13,5 +13,6 @@ spec:
       services:
         - name: el-tekton-argocd-example-build-el
           port: 8080
+          namespace: tekton-argocd-example
   tls:
     secretName: stiforr-com-tls
