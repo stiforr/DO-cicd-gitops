@@ -3,12 +3,12 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 resources:
   - argocd.yaml
 #  - ambassador.yaml
-  - tekton.yaml
+#  - tekton.yaml
 #  - crds.yaml
   - resources-ingress.yaml
   - resources-tls.yaml
   - sops-secrets.yaml
   - cert-manager.yaml
   - traefik.yaml
-  - tekton-dashboard.yaml
+#  - tekton-dashboard.yaml
   - resources-middleware.yaml
