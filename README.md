@@ -7,9 +7,12 @@ Challenge https://www.digitalocean.com/community/pages/kubernetes-challenge
 
 Table of Contents
 
-- [Fork and Clone the repository](#Fork and Clone the repository)
-- [Setup GPG and SOPS](#Setup GPG and SOPS)
-- [Bootstrap the cluster and wait for resources to be ready](#Bootstrap the cluster and wait for resources to be ready)
+- [DO-cicd-gitops](#do-cicd-gitops)
+  - [Getting Started](#getting-started)
+- [Tools used](#tools-used)
+- [Fork and Clone the repository](#fork-and-clone-the-repository)
+- [Setup GPG and SOPS](#setup-gpg-and-sops)
+- [Bootstrap the cluster and wait for resources to be ready](#bootstrap-the-cluster-and-wait-for-resources-to-be-ready)
 
 # Tools used
 
@@ -50,7 +53,7 @@ Subkey-Length: 4096
 Expire-Date: 0
 Name-Comment: ${KEY_COMMENT}
 Name-Real: ${KEY_NAME}
-EOF 
+EOF
 ```
 
 ```bash
@@ -78,8 +81,8 @@ creation_rules:
 ```
 
 - Update secrets in `./cluster/secrets`
-    - `auth.yaml` is a basic auth secret generated with `htpasswd`
-    - `cloudflare-secrets.yaml` is a cloudflare email and api-token secret
+  - `auth.yaml` is a basic auth secret generated with `htpasswd`
+  - `cloudflare-secrets.yaml` is a cloudflare email and api-token secret
 
 # Bootstrap the cluster and wait for resources to be ready
 
