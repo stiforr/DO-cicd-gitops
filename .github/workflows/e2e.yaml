@@ -23,6 +23,10 @@ jobs:
       - name: Install Flux in Kubernetes Kind
         run: flux install
       - name: Setup cluster reconciliation
+        env:
+          FLUX_IDENTITY: ${{ secrets.FLUX_IDENTITY }}
+          FLUX_IDENTITY_PUB: ${{ secrets.FLUX_IDENTITY_PUB }}
+          FLUX_KNOWN_HOSTS: ${{ secrets.FLUX_KNOWN_HOSTS }}
         run: |
           flux create source git flux-system \
           --url=${{ github.event.repository.html_url }} \
@@ -30,9 +34,14 @@ jobs:
           flux create kustomization flux-system \
           --source=flux-system \
           --path=./cluster/base
+          kubectl create secret generic flux-system \
+          --from-literal=identity=${FLUX_IDENTITY} \
+          --from-literal=identity.pub=${FLUX_IDENTITY_PUB} \
+          --from-literal=known_hosts=${FLUX_KNOWN_HOSTS}
       - name: Verify cluster reconciliation
         run: |
-          kubectl -n flux-system wait kustomization/argocd --for=condition=ready --timeout=10m
+          flux reconcile source git flux-system
+          kubectl -n flux-system wait kustomization/argo-cd --for=condition=ready --timeout=10m
       - name: Verify helm reconciliation
         run: |
           kubectl -n default wait helmrelease/argo-cd --for=condition=ready --timeout=5m
