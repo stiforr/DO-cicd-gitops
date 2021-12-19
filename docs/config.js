@@ -1,6 +1,6 @@
 const config = {
   gatsby: {
-    pathPrefix: '/',
+    pathPrefix: '/DO-cicd-gitops',
     siteUrl: 'https://stiforr.github.io/DO-cicd-gitops/',
     gaTrackingId: null,
     trailingSlash: false,
@@ -10,7 +10,7 @@ const config = {
     logoLink: '',
     title: '',
     //   "<a href='https://hasura.io/learn/'><img class='img-responsive' src='https://graphql-engine-cdn.hasura.io/learn-hasura/assets/homepage/learn-logo.svg' alt='Learn logo' /></a>",
-    githubUrl: 'https://github.com/hasura/gatsby-gitbook-boilerplate',
+    githubUrl: 'https://github.com/stiforr/DO-cicd-gitops',
     helpUrl: '',
     tweetText: '',
     // social: `<li>
