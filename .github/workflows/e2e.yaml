@@ -29,18 +29,13 @@ jobs:
           --branch=${GITHUB_REF#refs/heads/}
           flux create kustomization flux-system \
           --source=flux-system \
-          --path=./clusters/home-lab
+          --path=./cluster/base
       - name: Verify cluster reconciliation
         run: |
-          kubectl -n flux-system wait kustomization/istio-operator --for=condition=ready --timeout=10m
-          kubectl -n flux-system wait kustomization/istio-system --for=condition=ready --timeout=20m
-          kubectl -n flux-system wait kustomization/istio-gateway --for=condition=ready --timeout=10m
-          kubectl -n flux-system wait kustomization/infra-post --for=condition=ready --timeout=10m
+          kubectl -n flux-system wait kustomization/argocd --for=condition=ready --timeout=10m
       - name: Verify helm reconciliation
         run: |
-          kubectl -n default wait helmrelease/default-notes-frontend --for=condition=ready --timeout=5m
-          kubectl -n default wait helmrelease/default-treats-portfolio --for=condition=ready --timeout=5m
-          kubectl -n default wait helmrelease/postgres --for=condition=ready --timeout=5m
+          kubectl -n default wait helmrelease/argo-cd --for=condition=ready --timeout=5m
       - name: Debug failure
         if: failure()
         run: |
