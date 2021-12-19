@@ -16,8 +16,8 @@ jobs:
         uses: ./.github/actions/tools
       - name: Setup Flux
         uses: fluxcd/flux2/action@main
-        env:
-          VERSION: v0.24.0
+        with:
+          VERSION: 0.24.0
       - name: Setup Kubernetes
         uses: engineerd/setup-kind@v0.5.0
         with:
