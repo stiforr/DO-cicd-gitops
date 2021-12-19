@@ -28,16 +28,16 @@ jobs:
           FLUX_IDENTITY_PUB: ${{ secrets.FLUX_IDENTITY_PUB }}
           FLUX_KNOWN_HOSTS: ${{ secrets.FLUX_KNOWN_HOSTS }}
         run: |
+          kubectl create secret generic flux-system \
+          --from-literal=identity=${FLUX_IDENTITY} \
+          --from-literal=identity.pub=${FLUX_IDENTITY_PUB} \
+          --from-literal=known_hosts=${FLUX_KNOWN_HOSTS}
           flux create source git flux-system \
           --url=${{ github.event.repository.html_url }} \
           --branch=main
           flux create kustomization flux-system \
           --source=flux-system \
           --path=./cluster/base
-          kubectl create secret generic flux-system \
-          --from-literal=identity=${FLUX_IDENTITY} \
-          --from-literal=identity.pub=${FLUX_IDENTITY_PUB} \
-          --from-literal=known_hosts=${FLUX_KNOWN_HOSTS}
       - name: Verify cluster reconciliation
         run: |
           flux reconcile source git flux-system
