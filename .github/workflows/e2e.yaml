@@ -16,6 +16,8 @@ jobs:
         uses: ./.github/actions/tools
       - name: Setup Flux
         uses: fluxcd/flux2/action@main
+        env:
+          VERSION: v0.24.0
       - name: Setup Kubernetes
         uses: engineerd/setup-kind@v0.5.0
         with:
@@ -31,7 +33,8 @@ jobs:
           kubectl create secret generic flux-system \
           --from-literal=identity="${FLUX_IDENTITY}" \
           --from-literal=identity.pub="${FLUX_IDENTITY_PUB}" \
-          --from-literal=known_hosts="${FLUX_KNOWN_HOSTS}"
+          --from-literal=known_hosts="${FLUX_KNOWN_HOSTS}" \
+          -n flux-system
           flux create source git flux-system \
           --url=${{ github.event.repository.html_url }} \
           --branch=main
