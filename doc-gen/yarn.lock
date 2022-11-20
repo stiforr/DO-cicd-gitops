@@ -6159,10 +6159,10 @@ gatsby-plugin-gtag@^1.0.13:
   resolved "https://registry.npmjs.org/gatsby-plugin-gtag/-/gatsby-plugin-gtag-1.0.13.tgz#ffa08a728ba1cfe33090e52764d014a025a5d35a"
   integrity sha512-Oul6O67klajrEjkkF1diD228SmyUWsAwTq/1tYq41vBwmyNiPk4dhk8K93rrNQ5d5zesSv+awBeGBa503tQqGw==
 
-gatsby-plugin-layout@^3.0.0:
-  version "3.4.0"
-  resolved "https://registry.npmjs.org/gatsby-plugin-layout/-/gatsby-plugin-layout-3.4.0.tgz#c3c7d4178991fb1cf34a7f28c55ad76c19ae9b4d"
-  integrity sha512-YmcAW/RW/at+FugyOY1FzSfl0SMg+VZgYE80McOcf2uBwPiMYqMLz9UGHU/qObVcNYDe8tJ7ifVrAjJDWUkACA==
+gatsby-plugin-layout@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-layout/-/gatsby-plugin-layout-4.0.0.tgz#bfc95a027687a5c3809c9998747fd1b2017c17b5"
+  integrity sha512-tQOjjcox+lz45GWdCMYI1vqfQAJV5+cyK8892ZaAYqz4nH1+bM1KPZoKKLGav+WTTqGsnXmnnJXY0ZWXybYYxA==
   dependencies:
     "@babel/runtime" "^7.15.4"
 
