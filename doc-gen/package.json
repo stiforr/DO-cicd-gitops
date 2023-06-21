@@ -21,7 +21,7 @@
     "emotion": "^11.0.0",
     "emotion-server": "^11.0.0",
     "gatsby": "^4.0.0",
-    "gatsby-link": "^4.0.0",
+    "gatsby-link": "^5.0.0",
     "gatsby-plugin-algolia": "^0.19.0",
     "gatsby-plugin-emotion": "^7.0.0",
     "gatsby-plugin-gtag": "^1.0.13",
